@@ -3,14 +3,14 @@ FROM mono:latest as backend
 #Копируем всю папку backend проекта. В данном случае там уже должен находиться билд. Также, если он предварительно не собирается, нужно здесь написать соотв команды(ms-build).
 COPY /Objects /backend/Objects
 COPY /ODataBackend /backend/ODataBackend
-COPY AuditTestSimple.sln /backend
+COPY SampleAuditBigData.sln /backend
 
 COPY DockerConfig/NuGet.Config /nuget.config
 
 RUN \
  cd /backend ;\
- nuget restore AuditTestSimple.sln; \
- msbuild AuditTestSimple.sln
+ nuget restore SampleAuditBigData.sln; \
+ msbuild SampleAuditBigData.sln
 
 RUN \
 	cd /backend ;\

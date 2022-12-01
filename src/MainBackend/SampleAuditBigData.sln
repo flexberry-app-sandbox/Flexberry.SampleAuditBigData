@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31105.61
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTestSimple.Objects", "Objects\AuditTestSimple.Objects.csproj", "{9C5C8A2E-E534-40EF-A599-26EFCBFC9598}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAuditBigData.Objects", "Objects\SampleAuditBigData.Objects.csproj", "{9C5C8A2E-E534-40EF-A599-26EFCBFC9598}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditTestSimple.ODataBackend", "ODataBackend\AuditTestSimple.ODataBackend.csproj", "{BC790DFB-B459-4B95-A9E8-556E46FBAED0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAuditBigData.ODataBackend", "ODataBackend\SampleAuditBigData.ODataBackend.csproj", "{BC790DFB-B459-4B95-A9E8-556E46FBAED0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

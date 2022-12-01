@@ -270,9 +270,9 @@
     <Reference Include="System.EnterpriseServices">
       <HintPath>System.EnterpriseServices</HintPath>
     </Reference>
-    <ProjectReference Include="..\Objects\AuditTestSimple.Objects.csproj">
+    <ProjectReference Include="..\Objects\SampleAuditBigData.Objects.csproj">
       <Project>{9C5C8A2E-E534-40EF-A599-26EFCBFC9598}</Project>
-      <Name>AuditTestSimple.Objects</Name>
+      <Name>SampleAuditBigData.Objects</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
