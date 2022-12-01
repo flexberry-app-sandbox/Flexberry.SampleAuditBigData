@@ -1,35 +1,38 @@
-# Flexberry.SampleAuditBigData
-Репозиторий создан с помощью Flexberry Designer (https://designer.flexberry.net)
+# Flexberry.AuditBigDataTestStand
+Тестовый стенд AuditBigData
 
-## Развернутое приложение на GitHub Pages
+## Локальный запуск
 
-Демо-приложение с БД IndexedDb (в браузере):
-https://flexberry-app-sandbox.github.io/Flexberry.SampleAuditBigData/
+На компьютере должен быть установлен Docker
 
-## Запуск приложения в Docker
+Бэкенд часть:
 
-Для запуска приложения с БД требуется [Docker](https://docker.com).
+Записи аудита могут писаться в БД Clickhouse или Postgres.
 
-Последовательность действий:
+1) Запустить соответствующий sh скрипт 
 
-1. Собрать Docker-образы
-```
-\src\Docker> .\create-image.cmd
-```
+	build_clickhouse_backend 
+	build_postgres_backend
+	
+2) После завершения построения докер-образов запустить соотв cmd файл
 
-2. Запустить Docker-образы
-```
-\src\Docker> .\start.cmd
-```
+	run-clickhouse-backend
+	или
+	run-postgres-backend
+	
+3) Если выбран clickhouse, то после запуска контейнера auditbigdatatest/clickhouse нужно зайти в его терминал и вручную выполнить команду
 
-Приложение будет доступно по адресу http://localhost
+clickhouse-client --host clickhouse-db --user default --password P@ssw0rd --multiquery < /var/clickhouse/schema/CreateAuditTables.sql
 
-3. Остановить выполнение Docker-образов
-```
-\src\Docker> .\stop.cmd
-```
+	
+Для остановки контейнеров использовать stop-backend.cmd
 
-## Ссылки на документацию
 
-Подробнее о сгенерированном фронтенде: https://flexberry.github.io/ru/ef3_landing_page.html  
-Подробнее о сгенерированном бекенде: https://flexberry.github.io/ru/fo_orm-odata-service.html
+Фронтэнд часть:
+
+Фронтэнд есть для ember v2 и v3. Рекомендуется использовать v3
+
+перейти в папку src/ember-app-v3
+
+ember s -e development-loc
+
